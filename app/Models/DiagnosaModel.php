@@ -19,7 +19,12 @@ class DiagnosaModel extends Model
 
    public function dataDiagnosa()
    {
-      return $this->db->table('diagnosa')->join('users', 'users.id = diagnosa.id_user', 'inner')->join('penyakit', 'penyakit.kode_penyakit = diagnosa.kode_penyakit', 'inner')->join('solusi', 'solusi.kode_penyakit = penyakit.kode_penyakit', 'inner')->get()->getResultArray();
+      return $this->db->table('diagnosa')
+      ->join('users', 'users.id = diagnosa.id_user', 'inner')
+      ->join('penyakit', 'penyakit.kode_penyakit = diagnosa.kode_penyakit', 'inner')
+      ->join('solusi', 'solusi.kode_penyakit = penyakit.kode_penyakit', 'inner')
+      ->join('kecamatan', 'kecamatan.id = users.kecamatan_id', 'inner')
+      ->get()->getResultArray();
    }
 
    public function notification()

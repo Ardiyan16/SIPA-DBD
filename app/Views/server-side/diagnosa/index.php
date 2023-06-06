@@ -31,6 +31,7 @@
                         <tr>
                            <th>#No</th>
                            <th>Nama Pengguna</th>
+                           <th>Alamat</th>
                            <th>Tanggal Diagnosa</th>
                            <th>Gejala</th>
                            <th>Penyakit</th>
@@ -45,6 +46,7 @@
                            <tr>
                               <td><?= $number++ ?></td>
                               <td><?= $diagnosa['email'] ?></td>
+                              <td><?= $diagnosa['kecamatan'] ?></td>
                               <td><?= $diagnosa['tanggal_diagnosa'] ?></td>
                               <td>
                                  <ul><?= $diagnosa['gejala'] ?></ul>
